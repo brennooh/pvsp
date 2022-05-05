@@ -6,7 +6,9 @@
         [height]="400"
         [cellsToShow]="1"
         [transitionDuration]="4000"
-        [overflowCellsLimit]="1">
+        [overflowCellsLimit]="1"
+        [arrows]="false"
+        [loop]="true">
 
 				<div class="carousel-cell" *ngFor="let img of images; index as i;">
 				<img src="{{img.path}}" style="object-fit: cover; border-radius: 10px" >
@@ -20,7 +22,6 @@
 				[autoplayInterval]="2000"
         [height]="200"
         [cellsToShow]="3"
-        [freeScroll]="true"
         [transitionDuration]="2000"
         [arrows]="false"
         [overflowCellsLimit]="1">

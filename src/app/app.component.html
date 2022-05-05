@@ -1,5 +1,6 @@
 <app-header></app-header>
 <main>
-    <app-carousel-home></app-carousel-home>
+  <app-nav *ngIf="isNavActive"></app-nav>
+    <router-outlet class="router"></router-outlet>
 </main>
 <app-footer></app-footer>

@@ -5,6 +5,7 @@ import { CarouselHomeComponent } from './components/carousel-home/carousel-home.
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './components/main/main.component';
+import { NavComponent } from './components/nav/nav.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,7 +25,8 @@ import { HeaderComponent } from './components/header/header.component';
     ContactPage,
     AboutPage,
     CarouselHomeComponent,
-    MainComponent
+    MainComponent,
+    NavComponent
 
   ],
   imports: [
