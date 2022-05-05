@@ -1,0 +1,30 @@
+@import '../../../assets/css/variables';
+@import '../../../assets/css/mixins';
+
+:host{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  carousel {
+    max-width: 80rem;
+    width: 100%;
+    height: 100px;
+    z-index: 0;
+    padding: 15px;
+  }
+  h2 {
+    color: #b48608;
+    font-size: 36px;
+    font-weight: 400;
+    font-style: bold;
+    line-height: 44px;
+    text-align: center; }
+  h3 {
+    color: #b48608;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 44px;
+    text-align: center;
+  }
+}

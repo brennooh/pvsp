@@ -1,0 +1,24 @@
+$header-height: 4rem;
+
+$sans: 'Source Sans Pro', sans-serif;
+$serif: 'Source Serif Pro' , serif;
+
+$colors: (
+    "primary": #a0c,
+    "secondary": #0cc,
+    "foreground": #000,
+    "background": #fff,
+    "alt-bg": #111,
+    "alt-bg-l": #eee,
+    "success": #484,
+    "alert": #d44,
+);
+
+@keyframes drop {
+    0% {
+        top: -100%;
+    }
+    100% {
+        top: 0;
+    }
+}

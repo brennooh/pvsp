@@ -1,0 +1,215 @@
+@import '../../../assets/css/variables';
+@import '../../../assets/css/mixins';
+
+:host {
+  @include colorDark;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  height: $header-height;
+  width: 100%;
+  font-weight: 600;
+  padding: 0 1rem;
+  header {
+    display: grid;
+    grid-template:
+      "logo menu" 100% /
+      auto  auto;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    max-width: 80rem;
+    width: 100%;
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+    }
+    nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      .menu {
+        @include inactive;
+      }
+      ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        li {
+            padding-left: .5rem;
+            a {
+              transition: all .5s;
+              &:hover {
+                padding-bottom: .5rem;
+              }
+          }
+        }
+      }
+
+      .user {
+        @include colorAlt;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 2rem;
+        padding: 0 .5rem 0 0;
+        img {
+          height: 1.5rem;
+          width: 1.5rem;
+          border-radius: 2rem;
+        }
+
+      }
+      
+      .notsignedin {
+        @include colorLight;
+        margin-left: 1rem;
+        border-radius: 2rem;
+        .signin {
+          padding: .5rem;
+        }
+        .signup {
+          @include colorAlt;
+          padding: .5rem;
+          border-radius: 2rem;
+        }
+      }
+    }
+
+    @include mobile {
+      .menu {
+        @include activeImportant;
+        padding-right: 1rem;
+      }
+      ul {
+        @include inactive;
+        @include colorLight;
+        position: absolute;
+        top: 0;
+        height: 100vh;
+        width: 100vw;
+      }
+      .user {
+        visibility: hidden;
+      }
+    }
+    .container {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 16rem;
+      height: .5rem;
+      .search {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 2.5rem;
+        height: 2.5rem;
+        // background: rgb(20, 140, 220);
+        border-radius: 50%;
+        transition: all 1s;
+        z-index: 4;
+        box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+        // box-shadow: 0 0 25px 0 crimson;
+        &:hover {
+          cursor: pointer;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          margin: auto;
+          top: 22px;
+          right: 0;
+          bottom: 0;
+          left: 22px;
+          width: 12px;
+          height: 2px;
+          background: white;
+          transform: rotate(45deg);
+          transition: all .5s;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          margin: auto;
+          top: -5px;
+          right: 0;
+          bottom: 0;
+          left: -5px;
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          border: 2px solid white;
+          transition: all .5s;
+        }
+      }
+      input {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 2rem;
+        height: 2rem;
+        outline: none;
+        border: none;
+        // border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 0 80px 0 20px;
+        border-radius: .5rem;
+        transition: all 1s;
+        opacity: 0;
+        z-index: 5;
+        font-weight: bolder;
+        letter-spacing: 0.1em;
+        &:hover {
+          cursor: pointer;
+        }
+        &:focus {
+          width: 155px;
+          opacity: 1;
+          cursor: text;
+        }
+        &:focus ~ .search {
+          right: -250px;
+          background: map-get($colors, "primary");
+          z-index: 6;
+          &::before {
+            top: 0;
+            left: 0;
+            width: 25px;
+          }
+          &::after {
+            top: 0;
+            left: 0;
+            width: 25px;
+            height: 2px;
+            border: none;
+            background: white;
+            border-radius: 0%;
+            transform: rotate(-45deg);
+          }
+        }
+        &::placeholder {
+          color: rgb(0, 0, 0);
+          opacity: 0.5;
+          font-weight: bolder;
+        }
+      }
+    }
+  }
+}

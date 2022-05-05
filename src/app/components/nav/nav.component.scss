@@ -1,0 +1,20 @@
+@import '../../../assets/css/variables';
+@import '../../../assets/css/mixins';
+
+:host {
+    @include colorLight;
+    position: fixed;
+    top: $header-height;
+    display: grid;
+    font-weight: 600;
+    height: 100%;
+    width: 100%;
+    animation: drop ease-in-out .25s;
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 100%;
+    }
+}

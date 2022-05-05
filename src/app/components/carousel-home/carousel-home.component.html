@@ -1,0 +1,31 @@
+<h2>Confira nossos atletas</h2>
+			<carousel
+				#myCarousel="carousel"
+        [autoplay]="true"
+				[autoplayInterval]="1000"
+        [height]="400"
+        [cellsToShow]="1"
+        [transitionDuration]="4000"
+        [overflowCellsLimit]="1">
+
+				<div class="carousel-cell" *ngFor="let img of images; index as i;">
+				<img src="{{img.path}}" style="object-fit: cover; border-radius: 10px" >
+				</div>
+			</carousel>
+      <br><br>
+      <h3>Veja também</h3>
+      <carousel
+				#myCarousel="carousel"
+        [autoplay]="true"
+				[autoplayInterval]="2000"
+        [height]="200"
+        [cellsToShow]="3"
+        [freeScroll]="true"
+        [transitionDuration]="2000"
+        [arrows]="false"
+        [overflowCellsLimit]="1">
+
+				<div class="carousel-cell" *ngFor="let img of imagesx; index as i;">
+				<img src="{{img.path}}" style="object-fit: cover; border-radius: 10px" >
+				</div>
+			</carousel>

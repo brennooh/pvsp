@@ -1,0 +1,24 @@
+@import "../assets/css/variables";
+:host{
+  display: grid; /* <-- quebrando o carrossel */
+  grid-template:
+    "header"  $header-height
+    "main"    auto
+    "footer"  min-content /
+    100%;
+  // place-items: center center; /* <-- quebrando a postagem */
+  height: 100%;
+  gap: 1rem;
+  min-height: 100%;
+  width: 100%;
+  main {
+    grid-area: main;
+    // display: grid;
+    height: 100%;
+    width: 100%;
+  }
+  .router {
+    position: fixed;
+    grid-area: main;
+  }
+}

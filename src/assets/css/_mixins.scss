@@ -1,0 +1,48 @@
+@mixin colorLight {
+    color: map-get($colors, "foreground");
+    background-color: map-get($colors, "background");
+}
+
+@mixin colorDark {
+    color: map-get($colors, "background");
+    background-color: map-get($colors, "foreground");
+}
+
+@mixin colorAlt {
+    color: map-get($colors, "background");
+    background-color: map-get($colors, "primary");
+}
+
+@mixin textButton {
+    color: inherit;
+    background-color: transparent;
+    border: none;
+}
+
+@mixin active {
+    position: initial;
+    visibility: visible;
+}
+
+@mixin activeImportant {
+    position: initial;
+    visibility: visible !important;
+}
+
+@mixin inactive {
+    position: fixed;
+    visibility: hidden;
+}
+
+@mixin inactiveImportant {
+    position: fixed !important;
+    visibility: hidden !important;
+}
+
+@mixin mobile {
+    @media (max-width: 768px) { @content; }
+}
+
+@mixin phone {
+    @media (max-width: 392px) { @content; }
+}
